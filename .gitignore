@@ -129,5 +129,4 @@ dmypy.json
 .pyre/
 
 # Secrets
-secrets.yaml
-secrets.yaml
+.decrypted~secret.yaml

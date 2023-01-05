@@ -130,3 +130,5 @@ dmypy.json
 
 # Secrets
 .decrypted~secret.yaml
+.decrypted~secret.env
+*.decrypted~*

@@ -1,11 +1,19 @@
 import argparse
 import json
+import os
 from datetime import datetime, timedelta
+
+import requests
+from dotenv import load_dotenv
 
 from src.database.models import Weather
 from src.database.session import get_session
 
 TIME_DELTA = 120
+
+load_dotenv()
+apikey = os.getenv("API_KEY")
+zipcode = os.getenv("ZIP")
 
 
 def get_weather(location):
@@ -27,8 +35,11 @@ def add_weather(location, weather):
 
 
 def call_api():
-    with open("./example.json", "r", encoding="utf-8") as file:
-        return json.loads(file.read())
+    # with open("./example.json", "r", encoding="utf-8") as file:
+    #     return json.loads(file.read())
+    url_args = {"zip": zipcode, "appid": apikey}
+    r = requests.get("https://api.openweathermap.org/data/2.5/weather", params=url_args)
+    return r.json
 
 
 def main(args):

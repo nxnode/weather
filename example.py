@@ -1,5 +1,5 @@
-from app.database.models import Dog
-from app.database.session import get_session
+from src.database.models import Dog
+from src.database.session import get_session
 
 
 def add_dog(name, date_of_birth, height, weight):

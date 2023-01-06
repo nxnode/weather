@@ -5,5 +5,8 @@
     "sops.beta": true,
     "sops.binPath": "/usr/local/bin",
     "sops.configPath": "",
-    "sops.creationEnabled": true
+    "sops.creationEnabled": true,
+    "secrets.enabledFolders": [
+        "default"
+    ]
 }

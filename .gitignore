@@ -132,3 +132,11 @@ dmypy.json
 .decrypted~secret.yaml
 .decrypted~secret.env
 *.decrypted~*
+
+# examples for local testing
+example.json
+example.py
+
+# vs code local settings
+settings.json
+/.vscode

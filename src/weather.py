@@ -12,8 +12,8 @@ from src.database.session import get_session
 TIME_DELTA = 240
 
 load_dotenv()
-apikey = os.getenv("API_KEY")
-zipcode = os.getenv("ZIP")
+API_KEY = os.getenv("API_KEY")
+ZIPCODE = os.getenv("ZIP")
 
 
 def get_weather(location):
@@ -37,7 +37,7 @@ def add_weather(location, weather):
 def call_api():
     # with open("./example.json", "r", encoding="utf-8") as file:
     #     return json.loads(file.read())
-    url_args = {"zip": zipcode, "appid": apikey}
+    url_args = {"zip": ZIPCODE, "appid": API_KEY}
     r = requests.get("https://api.openweathermap.org/data/2.5/weather", params=url_args)
     return r.text
 

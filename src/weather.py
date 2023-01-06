@@ -39,7 +39,7 @@ def call_api():
     #     return json.loads(file.read())
     url_args = {"zip": zipcode, "appid": apikey}
     r = requests.get("https://api.openweathermap.org/data/2.5/weather", params=url_args)
-    return r.json
+    return r.text
 
 
 def main(args):

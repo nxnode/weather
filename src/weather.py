@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 from src.database.models import Weather
 from src.database.session import get_session
 
-TIME_DELTA = 120
+TIME_DELTA = 240
 
 load_dotenv()
 apikey = os.getenv("API_KEY")

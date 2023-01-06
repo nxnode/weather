@@ -37,9 +37,9 @@ def add_weather(location, weather):
 def call_api():
     # with open("./example.json", "r", encoding="utf-8") as file:
     #     return json.loads(file.read())
-    url_args = {"zip": ZIPCODE, "appid": API_KEY}
+    url_args = {"zip": ZIPCODE, "appid": API_KEY, "units": "imperial"}
     r = requests.get("https://api.openweathermap.org/data/2.5/weather", params=url_args)
-    return r.text
+    return r.json()
 
 
 def main(args):

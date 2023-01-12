@@ -20,3 +20,11 @@ def test_main(mock_get_weather):
     mock_data["dt"] = datetime.now().timestamp()
     mock_get_weather.return_value = mock_data
     assert main(Args()) == mock_data
+
+
+@patch("src.weather.call_api")
+def test_main(mock_get_weather):
+    mock_data = deepcopy(MOCK_DATA)
+    mock_data["dt"] = datetime.now().timestamp()
+    mock_get_weather.return_value = mock_data
+    assert main(Args()) == mock_data
